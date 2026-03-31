@@ -3,5 +3,35 @@
     "value": "works from any path",
     "metadata": {},
     "stored_at": "2026-03-31T13:40:37.128210Z"
+  },
+  "skill-chain-multi": {
+    "value": "When tackling complex tasks, invoke skills in sequence: brainstorming -> search-first -> create-plan -> implementation. This ensures well-researched, approved designs before coding.",
+    "metadata": {},
+    "stored_at": "2026-03-31T14:31:44.392874Z"
+  },
+  "multi-agent-orchestration": {
+    "value": "For multi-faceted tasks, use orchestrator droid to decompose work and delegate to specialized droids (coder, researcher, code-reviewer) rather than handling everything in one session.",
+    "metadata": {},
+    "stored_at": "2026-03-31T14:31:44.510204Z"
+  },
+  "askuser-first": {
+    "value": "When requirements are ambiguous, use AskUser for focused multi-choice questions before proceeding with implementation to avoid rework.",
+    "metadata": {},
+    "stored_at": "2026-03-31T14:31:44.618003Z"
+  },
+  "todo-tracking": {
+    "value": "Always create TodoWrite items for multi-step tasks, especially when skills are involved. Update status in real-time as work progresses.",
+    "metadata": {},
+    "stored_at": "2026-03-31T14:31:44.715799Z"
+  },
+  "research-before-code": {
+    "value": "For new features or unknown codebases, use search-first skill to check existing patterns before writing new code. Reduces duplicate abstractions.",
+    "metadata": {},
+    "stored_at": "2026-03-31T14:31:59.946873Z"
+  },
+  "session-analysis-pattern": {
+    "value": "Analyze recent session logs to extract: successful tool chains, skill usage sequences, common failure points, and reusable workflow approaches. Feed insights back to optimizer.",
+    "metadata": {},
+    "stored_at": "2026-03-31T14:32:00.074371Z"
   }
 }
