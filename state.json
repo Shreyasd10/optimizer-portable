@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "lastUpdated": null,
+  "lastManualAnalysis": null,
+  "lastSessionStartAdvice": null,
+  "retention": {
+    "lastPrunedAt": null,
+    "policySnapshot": {
+      "maxRecentRecommendations": 20,
+      "maxSessionIds": 50,
+      "preferenceTtlDays": 30
+    }
+  },
+  "observedPreferences": [],
+  "recentRecommendations": [],
+  "evidenceSnapshot": {
+    "historyWindow": null,
+    "sessionIds": [],
+    "notes": []
+  },
+  "timestamps": {
+    "observedPreferences": {},
+    "recentRecommendations": {},
+    "sessionIds": {}
+  }
+}

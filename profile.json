@@ -1,0 +1,68 @@
+{
+  "version": 2,
+  "modeSupport": {
+    "manualAnalysis": true,
+    "sessionStartAdvisor": true
+  },
+  "policy": {
+    "recommendOnly": true,
+    "autoModifyConfig": false,
+    "autoModifyPlugins": false,
+    "autoModifyDroids": false
+  },
+  "memoryFormat": {
+    "type": "json-snapshots",
+    "humanInspectable": true,
+    "rufloIntegration": {
+      "enabled": true,
+      "autoInitMemory": true,
+      "useSwarmForComplexTasks": false,
+      "fallbackToLocal": true
+    }
+  },
+  "retentionPolicy": {
+    "maxRecentRecommendations": 20,
+    "maxSessionIds": 50,
+    "preferenceTtlDays": 30
+  },
+  "evidenceSources": [
+    "history.json",
+    "sessions/**/*.jsonl",
+    "sessions/**/*.settings.json",
+    "droids/*.md",
+    "optimizer/profile.json",
+    "optimizer/state.json",
+    "optimizer/ruflo_bridge.py",
+    "optimizer/memory/*.json"
+  ],
+  "recommendationThemes": [
+    "routing",
+    "validation",
+    "model-selection",
+    "workflow-habits",
+    "skill-usage",
+    "pattern-recall",
+    "swarm-optimization"
+  ],
+  "ruflo": {
+    "integration": {
+      "enabled": true,
+      "autoDetect": true,
+      "fallbackToLocal": true
+    },
+    "memory": {
+      "namespace": "patterns",
+      "autoStorePatterns": true
+    },
+    "swarm": {
+      "defaultTopology": "hierarchical",
+      "defaultMaxAgents": 4,
+      "useForComplexTasks": false
+    },
+    "hooks": {
+      "useForRouting": true,
+      "useForLearning": true,
+      "postTaskTracking": true
+    }
+  }
+}

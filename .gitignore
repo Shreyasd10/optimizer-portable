@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Machine-specific
+.ruflo_disabled
+.ruflo_enabled
+*.log
+
+# Don't track state.json (user-specific learning)
+/state.json
+
+# But DO track the template
+# state.json.template

@@ -1,0 +1,20 @@
+{
+  "exported_at": "2026-03-31T19:21:27.887017",
+  "source": "/Users/shreyasdevadiga/.factory/optimizer",
+  "version": 2,
+  "includes_personal": true,
+  "files": {
+    "core": [
+      "profile.json",
+      "state.json",
+      "write_state.py",
+      "ruflo_bridge.py",
+      "paths.py",
+      "optimizer_cli.py"
+    ],
+    "memory": [
+      "test.json",
+      "patterns.json"
+    ]
+  }
+}
