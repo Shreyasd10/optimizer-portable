@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Code Simplify Refactor Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "goal",
+    "scope",
+    "mustPreserve",
+    "apiChangeAllowed",
+    "deliverables"
+  ],
+  "properties": {
+    "goal": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "files"
+      ],
+      "properties": {
+        "files": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "modules": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "publicInterfaces": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "default": []
+    },
+    "mustPreserve": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "externalBehavior",
+        "errorHandling",
+        "sideEffectOrdering"
+      ],
+      "properties": {
+        "externalBehavior": {
+          "type": "boolean"
+        },
+        "errorHandling": {
+          "type": "boolean"
+        },
+        "sideEffectOrdering": {
+          "type": "boolean"
+        },
+        "performance": {
+          "type": "string",
+          "enum": [
+            "neutral_or_better",
+            "explicitly_allowed_change"
+          ],
+          "default": "neutral_or_better"
+        }
+      }
+    },
+    "apiChangeAllowed": {
+      "type": "boolean",
+      "default": false
+    },
+    "validationCommands": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "default": []
+    },
+    "deliverables": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "summary",
+        "riskNotes"
+      ],
+      "properties": {
+        "summary": {
+          "type": "boolean",
+          "default": true
+        },
+        "riskNotes": {
+          "type": "boolean",
+          "default": true
+        },
+        "beforeAfterExamples": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    }
+  }
+}
