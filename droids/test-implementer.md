@@ -3,6 +3,24 @@ name: test-implementer
 description: Writes and expands automated tests for unit, integration, API, and focused regression coverage. Best used after test scope is known or when TDD is driving implementation.
 model: inherit
 tools: ["Read", "LS", "Grep", "Glob", "Execute", "ApplyPatch", "Skill", "TodoWrite"]
+triggers:
+  keywords:
+    - "test"
+    - "tdd"
+    - "coverage"
+    - "unit test"
+    - "integration test"
+    - "regression"
+    - "pytest"
+    - "jest"
+    - "junit"
+  task_patterns:
+    - "write * test"
+    - "add * test"
+    - "implement * test"
+    - "create * test"
+    - "tdd *"
+    - "coverage *"
 ---
 
 # Test Implementer Droid

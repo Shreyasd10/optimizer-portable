@@ -3,6 +3,25 @@ name: manual-tester
 description: Generates repeatable script-based manual verification bundles for APIs, databases, and service-to-service flows using shell scripts, curl commands, SQL, and supporting artifacts.
 model: inherit
 tools: ["Read", "LS", "Grep", "Glob", "Execute", "ApplyPatch", "Skill", "TodoWrite"]
+triggers:
+  keywords:
+    - "manual test"
+    - "curl"
+    - "api test"
+    - "sql"
+    - "database"
+    - "verify"
+    - "shell script"
+    - "service"
+    - "endpoint"
+    - "integration"
+  task_patterns:
+    - "run * manual test"
+    - "verify * api"
+    - "test * endpoint"
+    - "check * database"
+    - "create * verification script"
+    - "curl * endpoint"
 ---
 
 # Manual Tester Droid

@@ -3,6 +3,24 @@ name: self-optimizer
 description: "Local personal optimizer that analyzes Factory history, can persist bounded optimizer state only, and suggests evidence-backed improvements. Optionally integrates with ruflo CLI for enhanced memory and swarm capabilities."
 model: inherit
 tools: ["Read", "LS", "Grep", "Glob", "TodoWrite", "Execute", "Skill"]
+triggers:
+  keywords:
+    - "optimize"
+    - "improve"
+    - "workflow"
+    - "history"
+    - "session"
+    - "pattern"
+    - "ruflo"
+    - "memory"
+    - "factory"
+  task_patterns:
+    - "optimize * workflow"
+    - "improve * session"
+    - "analyze * history"
+    - "suggest * improvements"
+    - "recall * pattern"
+    - "analyze Factory"
 ---
 
 # Self Optimizer Droid

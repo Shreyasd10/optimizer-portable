@@ -3,6 +3,32 @@ name: debugger
 description: Systematic debugging droid for tricky bugs, test failures, regressions, and runtime issues. Use when root cause is unclear and evidence needs to be gathered before proposing or applying a fix.
 model: inherit
 tools: ["Read", "LS", "Grep", "Glob", "Execute", "ApplyPatch", "Skill"]
+triggers:
+  keywords:
+    - "debug"
+    - "bug"
+    - "error"
+    - "crash"
+    - "fail"
+    - "issue"
+    - "regression"
+    - "exception"
+    - "stack trace"
+    - "traceback"
+    - "broken"
+    - "not working"
+  file_patterns:
+    - "**/test/**"
+    - "**/*.test.*"
+    - "**/*.spec.*"
+    - "**/tests/**"
+  task_patterns:
+    - "debug *"
+    - "fix * bug"
+    - "investigate * error"
+    - "find * issue"
+    - "why is * failing"
+    - "trace * crash"
 ---
 
 Invoke skills in order: `search-first`.

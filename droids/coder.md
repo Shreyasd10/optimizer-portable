@@ -3,6 +3,37 @@ name: coder
 description: "Hands-on implementation droid that executes software development tasks through code changes, file operations, validation, and system commands. Use for feature work, bug fixes, refactors, tests, and concrete codebase modifications."
 model: inherit
 tools: ["Read", "LS", "Grep", "Glob", "Execute", "ApplyPatch", "FetchUrl", "WebSearch", "Task", "Skill", "TodoWrite"]
+triggers:
+  keywords:
+    - "implement"
+    - "feature"
+    - "bug fix"
+    - "refactor"
+    - "code"
+    - "build"
+    - "test"
+    - "function"
+    - "class"
+    - "module"
+    - "api"
+    - "endpoint"
+  file_patterns:
+    - "src/**"
+    - "lib/**"
+    - "**/*.py"
+    - "**/*.js"
+    - "**/*.ts"
+    - "**/*.go"
+    - "**/*.rs"
+    - "**/*.java"
+  task_patterns:
+    - "implement *"
+    - "add * feature"
+    - "fix * bug"
+    - "refactor *"
+    - "create * function"
+    - "build *"
+    - "write * test"
 ---
 
 # Coder Droid

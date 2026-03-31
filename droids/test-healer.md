@@ -2,6 +2,23 @@
 name: test-healer
 description: Diagnoses and fixes failing or flaky automated tests by separating test defects from product defects and applying the smallest reliable fix.
 model: inherit
+triggers:
+  keywords:
+    - "test"
+    - "flaky"
+    - "failing"
+    - "heal"
+    - "fix"
+    - "assertion"
+    - "spec"
+    - "test case"
+  task_patterns:
+    - "fix * test"
+    - "heal * test"
+    - "flaky * test"
+    - "failing * test"
+    - "repair * test"
+    - "debug * test"
 ---
 
 # Test Healer Droid
