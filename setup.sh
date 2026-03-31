@@ -24,7 +24,7 @@ OPTIMIZER_DIR="$INSTALL_DIR/optimizer"
 BIN_DIR="$INSTALL_DIR/bin"
 LOCAL_BIN="$HOME/.local/bin"
 
-FORCE=false
+FORCE=true  # Default: overwrite existing files (use --no-overwrite to preserve)
 DRY_RUN=false
 
 # Colors
@@ -43,7 +43,7 @@ skip() { echo -e "${YELLOW}[~]${NC} $1 (skipped)"; }
 # Parse args
 while [[ $# -gt 0 ]]; do
     case $1 in
-        --force) FORCE=true; shift ;;
+        --no-overwrite) FORCE=false; shift ;;
         --dry-run) DRY_RUN=true; shift ;;
         --help|-h) cat << 'HELP'
 Factory Optimizer - Single-File Installer
@@ -52,9 +52,9 @@ Usage:
   bash setup.sh [options]
 
 Options:
-  --force     Overwrite existing files without asking
-  --dry-run   Show what would be downloaded without installing
-  --help      Show this help
+  --dry-run       Show what would be downloaded without installing
+  --no-overwrite  Don't overwrite existing files
+  --help          Show this help
 
 The script sets up:
   - Optimizer: Python scripts for self-learning
@@ -62,7 +62,7 @@ The script sets up:
   - Skills: 19 skills
   - Commands: optimizer, ruflo-enable, ruflo-disable
 
-If files exist, you'll be asked before overwriting (unless --force is used).
+Default: Overwrites existing files with fresh copies from repo.
 HELP
         exit 0 ;;
         *) error "Unknown option: $1"; exit 1 ;;
