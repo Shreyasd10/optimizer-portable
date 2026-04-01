@@ -91,11 +91,57 @@ python3 sync.py import    # Import from directory
 ### Personal (optional)
 - `droids/*.md` - Custom droids
 - `skills/*.md` - Custom skills
+- `hooks/*.py` - Memory capture and session analysis hooks
+- `memories.md` - Markdown memory file
 
 ### Not Synced (machine-specific)
 - `.ruflo_disabled` - Local ruflo preference
 - `.DS_Store` - macOS artifacts
 - `__pycache__/` - Python cache
+
+## Hooks System
+
+The optimizer includes a hooks system for automatic memory capture and learning.
+
+### Hook Types
+
+| Hook | File | Purpose |
+|------|------|---------|
+| UserPromptSubmit | `memory-capture.py` | Captures memories from prompts |
+| TaskComplete | `post-task.py` | Records task outcomes |
+| SessionComplete | `session-analyzer.py` | Analyzes session patterns |
+
+### Memory Capture Triggers
+
+Use `#` prefix in prompts to capture memories:
+
+```bash
+#repository pattern      # Saves to project memory
+##personal preference    # Saves to personal memory
+Remember this: <text>    # Saves to project memory
+Note: <text>             # Saves to project memory
+```
+
+### Hook Configuration
+
+The hooks are configured in `hooks/config.json`. To activate:
+
+1. Reference the config in your Factory/droid hooks setup
+2. Or run hooks manually:
+
+```bash
+# Test memory capture
+echo '{"prompt": "# test pattern"}' | python3 ~/.factory/hooks/memory-capture.py
+
+# Run session analyzer
+python3 ~/.factory/hooks/session-analyzer.py
+```
+
+### Memory Storage
+
+Memories are stored in dual format:
+- `~/.factory/memories.md` - Markdown (human-readable, cross-platform)
+- `optimizer/memory/patterns.json` - JSON (optimizer-native)
 
 ## Per-Platform Notes
 
