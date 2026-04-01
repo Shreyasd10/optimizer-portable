@@ -145,19 +145,67 @@ Memories are stored in dual format:
 
 ## Installing on Another System
 
-### 1. Clone the repo
+### Option A: Download with curl (No git required)
+
+If git is not available, use curl to download files directly from GitHub:
+
+```bash
+# Create directories
+mkdir -p ~/.factory/optimizer/hooks
+mkdir -p ~/.factory/optimizer/memory
+mkdir -p ~/.factory/droids
+mkdir -p ~/.factory/skills
+
+# Download core files
+BASE="https://raw.githubusercontent.com/Shreyasd10/optimizer-portable/main"
+curl -sL "$BASE/optimizer_cli.py" -o ~/.factory/optimizer/optimizer_cli.py
+curl -sL "$BASE/ruflo_bridge.py" -o ~/.factory/optimizer/ruflo_bridge.py
+curl -sL "$BASE/paths.py" -o ~/.factory/optimizer/paths.py
+curl -sL "$BASE/sync.py" -o ~/.factory/optimizer/sync.py
+curl -sL "$BASE/write_state.py" -o ~/.factory/optimizer/write_state.py
+curl -sL "$BASE/profile.json" -o ~/.factory/optimizer/profile.json
+curl -sL "$BASE/state.json" -o ~/.factory/optimizer/state.json
+curl -sL "$BASE/manifest.json" -o ~/.factory/optimizer/manifest.json
+curl -sL "$BASE/README.md" -o ~/.factory/optimizer/README.md
+
+# Download hooks
+curl -sL "$BASE/hooks/memory-capture.py" -o ~/.factory/optimizer/hooks/memory-capture.py
+curl -sL "$BASE/hooks/session-analyzer.py" -o ~/.factory/optimizer/hooks/session-analyzer.py
+curl -sL "$BASE/hooks/post-task.py" -o ~/.factory/optimizer/hooks/post-task.py
+curl -sL "$BASE/hooks/config.json" -o ~/.factory/optimizer/hooks/config.json
+
+# Download memories
+curl -sL "$BASE/memories.md" -o ~/.factory/memories.md
+
+# Download droids (example - download all .md files from droids folder)
+for f in architect coder debugger manual-tester self-optimizer test-healer test-implementer user-testing-flow-validator worker scrutiny-feature-reviewer; do
+  curl -sL "$BASE/droids/$f.md" -o ~/.factory/droids/$f.md
+done
+
+# Download skills
+# Skills are in subdirectories - download each skill's SKILL.md
+SKILLS_BASE="https://api.github.com/repos/Shreyasd10/optimizer-portable/contents/skills"
+# Note: GitHub API rate limits apply. For skills, consider git clone or manual copy.
+
+# Make hooks executable
+chmod +x ~/.factory/optimizer/hooks/*.py
+```
+
+### Option B: Clone the repo
 
 ```bash
 git clone https://github.com/Shreyasd10/optimizer-portable.git ~/.factory/optimizer
 ```
 
-### 2. Make hooks executable
+### Post-Installation Steps
+
+#### 1. Make hooks executable
 
 ```bash
 chmod +x ~/.factory/optimizer/hooks/*.py
 ```
 
-### 3. Install droids and skills
+#### 2. Install droids and skills
 
 Droids and skills are stored at the Factory level (`~/.factory/droids/` and `~/.factory/skills/`). After cloning:
 
@@ -169,13 +217,13 @@ cp -r ~/.factory/optimizer/droids/* ~/.factory/droids/
 cp -r ~/.factory/optimizer/skills/* ~/.factory/skills/
 ```
 
-### 4. Create memories file (optional)
+#### 3. Create memories file (optional)
 
 ```bash
 cp ~/.factory/optimizer/memories.md ~/.factory/memories.md
 ```
 
-### 5. Setup bin scripts (optional)
+#### 4. Setup bin scripts (optional)
 
 ```bash
 mkdir -p ~/.local/bin
@@ -183,7 +231,7 @@ ln -s ~/.factory/optimizer/optimizer_cli.py ~/.local/bin/optimizer
 chmod +x ~/.local/bin/optimizer
 ```
 
-### 6. Verify installation
+#### 5. Verify installation
 
 ```bash
 python3 ~/.factory/optimizer/optimizer_cli.py status
