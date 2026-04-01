@@ -33,5 +33,29 @@
     "value": "Analyze recent session logs to extract: successful tool chains, skill usage sequences, common failure points, and reusable workflow approaches. Feed insights back to optimizer.",
     "metadata": {},
     "stored_at": "2026-03-31T14:32:00.074371Z"
+  },
+  "test-pattern---we-use-the-repository-pattern": {
+    "value": "test pattern - we use the repository pattern",
+    "metadata": {
+      "source": "hook",
+      "captured_at": "2026-04-01T10:38:43.324059"
+    },
+    "stored_at": "2026-04-01T05:08:43.324271Z"
+  },
+  "personal-note---i-prefer-zsh-over-bash": {
+    "value": "personal note - I prefer zsh over bash",
+    "metadata": {
+      "source": "hook",
+      "captured_at": "2026-04-01T10:38:54.165436"
+    },
+    "stored_at": "2026-04-01T05:08:54.165513Z"
+  },
+  "we-prefer-early-returns-in-python": {
+    "value": "we prefer early returns in Python",
+    "metadata": {
+      "source": "hook",
+      "captured_at": "2026-04-01T10:38:59.314139"
+    },
+    "stored_at": "2026-04-01T05:08:59.314209Z"
   }
 }

@@ -1,0 +1,37 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.factory/hooks/memory-capture.py"
+          }
+        ]
+      }
+    ],
+    "TaskComplete": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.factory/hooks/post-task.py"
+          }
+        ]
+      }
+    ],
+    "SessionComplete": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.factory/hooks/session-analyzer.py"
+          }
+        ]
+      }
+    ]
+  }
+}
