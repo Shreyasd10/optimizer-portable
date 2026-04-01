@@ -143,6 +143,52 @@ Memories are stored in dual format:
 - `~/.factory/memories.md` - Markdown (human-readable, cross-platform)
 - `optimizer/memory/patterns.json` - JSON (optimizer-native)
 
+## Installing on Another System
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/Shreyasd10/optimizer-portable.git ~/.factory/optimizer
+```
+
+### 2. Make hooks executable
+
+```bash
+chmod +x ~/.factory/optimizer/hooks/*.py
+```
+
+### 3. Install droids and skills
+
+Droids and skills are stored at the Factory level (`~/.factory/droids/` and `~/.factory/skills/`). After cloning:
+
+```bash
+# Copy droids to ~/.factory/droids
+cp -r ~/.factory/optimizer/droids/* ~/.factory/droids/
+
+# Copy skills to ~/.factory/skills
+cp -r ~/.factory/optimizer/skills/* ~/.factory/skills/
+```
+
+### 4. Create memories file (optional)
+
+```bash
+cp ~/.factory/optimizer/memories.md ~/.factory/memories.md
+```
+
+### 5. Setup bin scripts (optional)
+
+```bash
+mkdir -p ~/.local/bin
+ln -s ~/.factory/optimizer/optimizer_cli.py ~/.local/bin/optimizer
+chmod +x ~/.local/bin/optimizer
+```
+
+### 6. Verify installation
+
+```bash
+python3 ~/.factory/optimizer/optimizer_cli.py status
+```
+
 ## Per-Platform Notes
 
 ### Factory/Droid
